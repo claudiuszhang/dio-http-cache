@@ -54,18 +54,16 @@ class PanelHelper {
                   Text("NOTE: $title",
                       style: Theme.of(context)
                           .textTheme
-                          .subtitle2!
+                          .titleMedium!
                           .copyWith(color: Theme.of(context).primaryColor)),
                   Container(height: 20),
                   Text("Base url:",
-                      style: Theme.of(context)
-                          .textTheme
-                          .subtitle2!
-                          .copyWith(color: Theme.of(context).accentColor)),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).secondaryHeaderColor)),
                   Text(DioHelper.baseUrl,
                       style: Theme.of(context)
                           .textTheme
-                          .bodyText2!
+                          .titleMedium!
                           .copyWith(color: Colors.grey)),
                   for (var w in _buildInput(
                       context,
@@ -93,13 +91,13 @@ class PanelHelper {
           text: "$k: ",
           style: Theme.of(context)
               .textTheme
-              .subtitle2!
+              .titleMedium!
               .copyWith(color: Colors.teal)));
       widgets.add(TextSpan(
           text: "$v\n\n",
           style: Theme.of(context)
               .textTheme
-              .bodyText2!
+              .titleMedium!
               .copyWith(color: Theme.of(context).disabledColor)));
     });
     return widgets;
@@ -113,8 +111,8 @@ class PanelHelper {
       Text("$title:",
           style: Theme.of(context)
               .textTheme
-              .subtitle2!
-              .copyWith(color: Theme.of(context).accentColor)),
+              .titleMedium!
+              .copyWith(color: Theme.of(context).secondaryHeaderColor)),
       Row(children: <Widget>[
         Expanded(child: TextField(controller: controller)),
         for (var w in _buildRequestButton(context, request)) w,
@@ -131,7 +129,7 @@ class PanelHelper {
             child: Text("GO",
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2!
+                    .titleMedium!
                     .copyWith(color: Colors.white)),
             onPressed: () => request())
       ];
